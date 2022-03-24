@@ -1,7 +1,8 @@
 name: filterable_logger
 description: A new Flutter project.
-version: 0.0.5
+version: 0.0.6
 homepage:
+repository: https://github.com/dddrop/filterable_logger
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
