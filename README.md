@@ -1,39 +1,77 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Filterable Logger
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+[![pub package](https://img.shields.io/badge/filterable__logger-v0.0.2-green)](https://pub.dev/packages/filterable_logger)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A filterable logger with colored output for different log level.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Log level definition is based on dart [logging](https://pub.dev/packages/logging) package.
 
-## Getting started
+```lang=dart
+Level.OFF
+Level.SHOUT
+Level.SEVERE
+Level.WARNING
+Level.INFO
+Level.CONFIG
+Level.FINE
+Level.FINER
+Level.FINEST
+```
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- Colored output
+
+<img src="resources/color_output.png" width="400"  alt="Colored output"/>
+
+- Filterable
+    
+    To suppress unuseful log info, tags filter will work.
+
+```lang=dart
+// Set tags filter
+FilterableLogger.setup(tagsFilter: <Object>['Network']);
+
+// This will be printed.
+FilterableLogger.info('Message', tags: <Object>['Network', 'Debug']);
+
+// This will not be printed
+FilterableLogger.info('Message', tags: <Object>['Debug']);
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+```lang=dart
+// Basic usage
+FilterableLogger.shout('This is \'SHOUT\' log.');
 
-```dart
-const like = 'sample';
+FilterableLogger.severe('This is \'SEVERE\' log.');
+
+FilterableLogger.warning('This is \'WARNING\' log.');
+
+FilterableLogger.info('This is \'INFO\' log.');
+
+FilterableLogger.config('This is \'CONFIG\' log.');
+
+FilterableLogger.fine('This is \'FINE\' log.');
+
+FilterableLogger.finer('This is \'FINER\' log.');
+
+FilterableLogger.finest('This is \'FINEST\' log.');
 ```
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```lang=dart
+// Logger configurations
+FilterableLogger.setup(
+  level: Level.INFO,
+  showTraceInfo: true,
+  traceLevel: 3,
+  format: (LogRecord record) {
+    return 'Customized log format';
+  },
+  tagsFilter: <Object>['Filters'],
+  afterLogging: (LogRecord record){
+    // Callback after log successfully
+  },
+);
+```
