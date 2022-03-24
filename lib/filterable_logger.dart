@@ -1,7 +1,4 @@
 library filterable_logger;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/filterable_logger.dart';
+export 'src/log_record.dart';
