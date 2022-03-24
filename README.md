@@ -22,7 +22,7 @@ Level.FINEST
 
 - Colored output
 
-<img src="resources/color_output.png" width="400"  alt="Colored output"/>
+<img src="https://github.com/dddrop/filterable_logger/blob/main/resources/color_output.png" width="400"  alt="Colored output"/>
 
 - Filterable
     
