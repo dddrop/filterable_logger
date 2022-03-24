@@ -1,6 +1,6 @@
 # Filterable Logger
 
-[![pub package](https://img.shields.io/badge/filterable__logger-v0.0.2-green)](https://pub.dev/packages/filterable_logger)
+[![pub package](https://img.shields.io/badge/filterable__logger-v0.0.3-green)](https://pub.dev/packages/filterable_logger)
 
 A filterable logger with colored output for different log level.
 
