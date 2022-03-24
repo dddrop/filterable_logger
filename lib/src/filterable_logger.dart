@@ -116,13 +116,12 @@ class FilterableLogger {
   LogFormat get _defaultFormat {
     return (LogRecord record) {
       String message = '${_colorPrefix[record.level]}';
-      message += '[${record.level}] ';
-      message += '${record.time} ';
-      if (record.stackFrame != null) {
-        message += '${record.stackFrame} ';
+      message += '[${record.level}]';
+      message += ' ${record.time}';
       if (record.stackFrame != null && _showTraceInfo) {
+        message += ' ${record.stackFrame}';
       }
-      message += record.message;
+      message += ': ${record.message}';
       message += _colorReset;
       return message;
     };
