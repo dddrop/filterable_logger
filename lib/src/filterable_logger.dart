@@ -27,6 +27,7 @@ class FilterableLogger {
   LogFormat? _globalFormat;
   List<Object>? _tagsFilter;
   LogRecordCallback? _afterLogging;
+  bool _showTraceInfo = true;
 
   ///
   static void setup({
@@ -42,6 +43,7 @@ class FilterableLogger {
     _shared._globalFormat = format;
     _shared._tagsFilter = tagsFilter;
     _shared._afterLogging = afterLogging;
+    _shared._showTraceInfo = showTraceInfo;
   }
 
   ///
@@ -118,6 +120,7 @@ class FilterableLogger {
       message += '${record.time} ';
       if (record.stackFrame != null) {
         message += '${record.stackFrame} ';
+      if (record.stackFrame != null && _showTraceInfo) {
       }
       message += record.message;
       message += _colorReset;
