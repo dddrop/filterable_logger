@@ -113,6 +113,38 @@ class FilterableLogger {
   static String? shout(Object? message, {List<Object>? tags}) =>
       _shared.log(Level.SHOUT, message, tags: tags);
 
+  ///
+  static String? l1(Object? message, {List<Object>? tags}) =>
+      _shared.log(Level.FINEST, message, tags: tags);
+
+  ///
+  static String? l2(Object? message, {List<Object>? tags}) =>
+      _shared.log(Level.FINER, message, tags: tags);
+
+  ///
+  static String? l3(Object? message, {List<Object>? tags}) =>
+      _shared.log(Level.FINE, message, tags: tags);
+
+  ///
+  static String? l4(Object? message, {List<Object>? tags}) =>
+      _shared.log(Level.CONFIG, message, tags: tags);
+
+  ///
+  static String? l5(Object? message, {List<Object>? tags}) =>
+      _shared.log(Level.INFO, message, tags: tags);
+
+  ///
+  static String? l6(Object? message, {List<Object>? tags}) =>
+      _shared.log(Level.WARNING, message, tags: tags);
+
+  ///
+  static String? l7(Object? message, {List<Object>? tags}) =>
+      _shared.log(Level.SEVERE, message, tags: tags);
+
+  ///
+  static String? l8(Object? message, {List<Object>? tags}) =>
+      _shared.log(Level.SHOUT, message, tags: tags);
+
   LogFormat get _defaultFormat {
     return (LogRecord record) {
       String message = '${_colorPrefix[record.level]}';
