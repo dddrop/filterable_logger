@@ -1,5 +1,5 @@
 name: filterable_logger
-description: A new Flutter project.
+description: A logger with color output and filters.
 version: 0.0.7
 homepage:
 repository: https://github.com/dddrop/filterable_logger
